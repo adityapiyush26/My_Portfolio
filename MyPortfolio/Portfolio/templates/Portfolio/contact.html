@@ -1,13 +1,10 @@
 {% extends "Portfolio/index.html" %}
-{% load crispy_forms_tags %}
 {% block content %}
 <div class="container-contact">
       <h1 class="me">Ping me here!</h1>
       <form method="POST">
         <div class="metoo">
-          {{ form.name|as_crispy_field }}
-          {{ form.email|as_crispy_field }}
-          {{ form.message|as_crispy_field }}
+          {{ form.as_p }}
         </div>
         {% csrf_token %}
         <input type="submit" class='btn btn-primary' value="Submit">
